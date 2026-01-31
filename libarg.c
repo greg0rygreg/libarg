@@ -19,6 +19,7 @@ la_args* la_init(int argc, char** argv) {
   for (int i = 1; i < argc; ++i) {
     if (argv[i][0] == '-' && argv[i] != NULL) {
       a->argp[i] = strdup(argv[i]);
+      ++p;
     } else {
       int j = i;
       int k = 1; // start with 1 for null term.
@@ -30,7 +31,10 @@ la_args* la_init(int argc, char** argv) {
         ++i;
       }
       i = j;
+      ++v;
     }
   }
+  a->argv = realloc(a->argv, v*sizeof(char*));
+  a->argp = realloc(a->argp, p*sizeof(char*));
   return a;
 }
