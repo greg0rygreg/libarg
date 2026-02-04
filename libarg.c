@@ -16,7 +16,7 @@ la_args* la_init(int argc, char** argv) {
   // a
   int p = 0;
   // ing is bad for you don't do it please
-  for (int i = 1; i < argc; ++i) {
+  for (int i = 1; i < argc; i++) {
     if (argv[i][0] == '-' && argv[i] != NULL) {
       a->argp[i] = strdup(argv[i]);
       ++p;
@@ -28,10 +28,10 @@ la_args* la_init(int argc, char** argv) {
         k += strlen(argv[i]);
         a->argv[i] = realloc(a->argv[i], k);
         strncat(a->argv[i], argv[i], k);
-        ++i;
+        i++;
       }
       i = j;
-      ++v;
+      v++;
     }
   }
   a->argv = realloc(a->argv, v*sizeof(char*));
