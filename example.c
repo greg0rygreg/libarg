@@ -9,11 +9,14 @@ int main(int argc, char** argv) {
 
   if (la_findflag("--say-hello") != -1)
     printf("hello there\n");
+
   if (la_findflag("--say-bye") != -1)
     printf("goodbye\n");
+
   // probably not a good idea but i fw it
   if (intindex != -1 && intindex+1 < argc)
     printf("your number is: %d\n", atoi(argv[intindex+1]));
+
   printf("your char is: ");
   if (charindex != -1 && charindex+1 < argc)
     printf("%c\n", argv[charindex+1][0]);
