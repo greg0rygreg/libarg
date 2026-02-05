@@ -1,10 +1,17 @@
 #ifndef LIBARG_H
 #define LIBARG_H
+// uncomment line below to enable debugging
+//#define LA_DEBUG
 
-typedef struct la_args {
-  int argc; // argument list count
-  char** argp; // parameters
-  char** argv; // values
-} la_args;
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void la_init(int argc, char** argv);
+int la_findflag(char* fn);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // LIBARG_H
