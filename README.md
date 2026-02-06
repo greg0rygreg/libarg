@@ -3,5 +3,6 @@
 
 
 ## TODO
-- [ ] add more functions
-- [ ] document functions in [`libarg.h`](libarg.h)
+- [X] add more functions
+ - [ ] add even more functions if possible
+- [X] document functions in [`libarg.h`](libarg.h)
