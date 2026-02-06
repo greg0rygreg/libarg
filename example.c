@@ -3,17 +3,21 @@
 #include <stdlib.h>
 
 int main(int argc, char** argv) {
-  la_init(argc, argv);
-  int intindex;
-  int charindex;
-
-  char helpmenu[] = "values: [required] <optional>\n\
+  la_init(
+    argc,
+    argv,
+    "\
+values: [required] <optional>\n\
 -h / --help        show this menu\n\
 --say-hello        tell program to say hello\n\
 --say-bye / -sb    tell program to say goodbye\n\
 --testint [int]    test atoi(s)\n\
---testchar <char>  test argv[i][0]";
-  if (la_helpmenu(helpmenu))
+--testchar <char>  test argv[i][0]\
+");
+  int intindex;
+  int charindex;
+
+  if (la_needshelp(1))
     return 1;
 
   if (la_findflag("--say-hello") != -1)

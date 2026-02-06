@@ -5,11 +5,12 @@
 
 static int largc;
 static char** largv;
-static char* help[] = {"-h", "--help"};
+static char* help;
 
-void la_init(int argc, char** argv) {
+void la_init(int argc, char** argv, char* hm) {
   largc = argc;
   largv = argv;
+  help = hm;
 }
 
 int la_findflag(char* fn) {
@@ -32,9 +33,9 @@ int la_FFanyof(char** fl, int ls) {
   return r;
 }
 
-int la_helpmenu(char* hm) {
-  if (la_FFanyof(help, 2) != -1) {
-    printf("%s\n", hm);
+int la_needshelp(int nl) {
+  if (la_FFanyof((char*[]){"-h", "--help"}, 2) != -1) {
+    printf("%s%c", help, nl? 10:0);
     return 1;
   }
   return 0;

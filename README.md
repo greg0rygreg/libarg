@@ -1,8 +1,9 @@
 # libarg
-~~extremely insecure~~ barebones C library for executable file parameters
+~~extremely insecure and somewhat~~ barebones C library for executable file parameters
 
 
 ## TODO
 - [X] add more functions
- - [ ] add even more functions if possible
 - [X] document functions in [`libarg.h`](libarg.h)
+- [ ] add even more functions if possible
+- [ ] rewrite the thing for the 2nd time cuz i have big plans
