@@ -26,6 +26,7 @@ int la_findflag(char* fn) {
 
 int la_FFanyof(char** fl, int ls) {
   int r;
+  if (!fl || ls == 0) return -1;
   for (int i = 0; i < ls; i++) {
     r = la_findflag(fl[i]);
     if (r != -1) break;
@@ -41,3 +42,6 @@ int la_needshelp(int nl) {
   return 0;
 }
 
+int la_IE4V(int i) {
+  return i != -1 && i+1 < largc;
+}

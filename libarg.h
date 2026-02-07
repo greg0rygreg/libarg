@@ -4,24 +4,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-/*
-typedef enum la_types {
-  DNUM,
-  FPNUM,
-  NUMBER,
-  CHARACTER,
-  WORD,
-  //STRING
-} la_types;
 
-typedef union la_ret {
-  double dnum;
-  float fpnum;
-  int number;
-  char character;
-  char* word; // can also be string
-}
-*/
 // initialize the library
 //
 // `char* hm`: help menu
@@ -43,6 +26,15 @@ int la_FFanyof(char** fl, int ls);
 // `int nl`: include new line
 // at the end of printing?
 int la_needshelp(int nl);
+
+// IE4V: Index Eligible For
+// Value
+//
+// determines if the returning
+// value of `la_findflag` or
+// `la_FFanyof` is eligible
+// to parent a value
+int la_IE4V(int i);
 
 #ifdef __cplusplus
 }

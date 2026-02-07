@@ -6,4 +6,3 @@
 - [X] add more functions
 - [X] document functions in [`libarg.h`](libarg.h)
 - [ ] add even more functions if possible
-- [ ] rewrite the thing for the 2nd time cuz i have big plans
